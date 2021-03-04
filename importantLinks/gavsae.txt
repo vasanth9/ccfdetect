@@ -1,0 +1,18 @@
+
+
+The first classic paper your present uses a genetic algorithm (GA), while you mention genetic programming (GP). In short, a GA uses an evolutionary process to evolve a fixed-length vector, normally a bit string, while a GP evolves variable-length decision trees, which could be a computer program or mathematical function.
+
+An autoencoder is something that automatically encodes or decodes something. For example, a noisy image is decoded to the original image (very simplified I know), the point here is automatically, so, without any defined process, an autoencoder can "learn" how to remove the noise from the image.
+
+Generally, an autoencoder is made using a neural network (NN). The noisy image is read in as input and the output is a clear image. To train the NN, backpropagation is used. For backpropagation to work, an error is needed to calculate the weight changes. Alternatively, the weights could be encoded as a vector. A fixed-length vector is then evolved using a GA to evolve the weights of the NN. This is what the "classic paper" mentioned does.
+
+Using a GA to evolve the weights of a NN is not really efficient, because weights affect each other which means each time crossover happens the weights are totally messed up and the GA can easily get stuck in a local optimum. Gradient descent is probably more efficient.
+
+The structure of a multi-layered network is important. Here, gradient descent is still used to update the weights, but a GP could be used to evolve the structure of the NN.
+
+Alternatively, the GP itself could be used to evolve an autoencoder without using a NN. Here, the chromosome will contain nodes such as mathematical operations or computer code that would alter the input to produce the output.
+
+
+    https://www.ijcai.org/Proceedings/89-1/Papers/122.pdf
+    
+    http://www.springer.com/cda/content/document/cda_downloaddocument/9783319700953-c2.pdf
